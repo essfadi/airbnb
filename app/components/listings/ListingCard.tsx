@@ -1,17 +1,17 @@
 'use client';
 
 import useCountries from "@/app/hooks/useCountries";
-import { SafeUser } from "@/app/types";
-import type { Listing, Reservation } from "@prisma/client";
-import { useRouter } from "next/navigation";
-import { useCallback, useMemo } from "react";
+import { SafeListing, SafeUser } from "@/app/types";
+import type { Reservation } from "@prisma/client";
 import { format } from "date-fns";
 import Image from "next/image";
-import HeartButton from "../HeartButton";
+import { useRouter } from "next/navigation";
+import { useCallback, useMemo } from "react";
 import Button from "../Button";
+import HeartButton from "../HeartButton";
 
 interface ListingCardProps {
-  data: Listing;
+  data: SafeListing;
   currentUser?: SafeUser | null;
   reservation?: Reservation;
   onAction?: (id: string) => void
